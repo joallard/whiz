@@ -5,6 +5,8 @@ Whois, but shorter and nicer.
 It parses the whois info, and returns only the relevant information in a
 standard way.
 
+![Screenshot](https://raw.githubusercontent.com/joallard/whos/master/docs/screenshot.png)
+
 Usage
 -----
 ```bash
