@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+require "bundler/setup"
+require "whos"
+
+unless domain = ARGV[0]
+  puts "Usage: whos [domain.com]"
+  exit 1
+end
+
+Whos.lookup(domain)
