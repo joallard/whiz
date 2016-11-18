@@ -6,6 +6,7 @@ require 'whos/version'
 Gem::Specification.new do |spec|
   spec.name          = "whos"
   spec.version       = Whos::VERSION
+  spec.licenses      = ['GPL-3.0']
   spec.authors       = ["Jonathan Allard"]
   spec.email         = ["jonathan@allard.io"]
 
@@ -27,6 +28,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "pry", "~> 0.10"
-  spec.add_development_dependency "pry-rescue"
-  spec.add_development_dependency "pry-stack_explorer"
+  spec.add_development_dependency "pry-rescue", "~> 1.4"
+  spec.add_development_dependency "pry-stack_explorer", "~> 0.4"
 end
