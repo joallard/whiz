@@ -5,14 +5,15 @@ require "whois-parser"
 
 module Whos
   def self.lookup(domain, opts: {})
-    Lookup.new(domain).print_output
+    Lookup.new(domain).tap{ |l| l.print_output }
   end
 
   class Lookup
+    attr_reader :lookup, :parsed
+
     # Functions as a DSL to define the output
     def output
-      domain
-      puts("=" * @domain.length)
+      h1 domain
       status
 
       puts
@@ -60,7 +61,7 @@ module Whos
 
     module Output
       def domain
-        puts @domain
+        give @domain
       end
 
       def status
@@ -80,13 +81,26 @@ module Whos
 
         print status
         puts "\e[0m"
+
+        status
       end
 
+      # Ensures property is available in lookup and that it is not empty
       def property(prop)
         return unless @parsed.property_any_supported?(prop)
         return unless result = @parsed.public_send(prop)
 
         puts yield(result)
+      end
+
+      def h1(content)
+        # puts(content)
+        puts("=" * content.length)
+      end
+
+      # Makes a puts that returns the object
+      def give(content)
+        content.tap{ |c| puts(c) }
       end
     end
 
