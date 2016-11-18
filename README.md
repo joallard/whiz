@@ -10,7 +10,7 @@ standard way.
 Usage
 -----
 ```bash
-$ ruby lookup.rb github.com
+$ whos github.com
 
 github.com
 ----------
@@ -23,11 +23,7 @@ Registrar:  MarkMonitor, Inc.
 
 ### Installation
 ```bash
-$ git clone https://github.com/joallard/whos.git
-$ cd whos
-$ bundle install
-
-# You're good to go
+$ gem install whos
 ```
 
 Underlying gems
